@@ -1,0 +1,71 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  font-size: 20px;
+}
+
+/* Game section */
+
+.game {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-in {
+  text-align: center;
+}
+
+.title {
+  font-size: 50px;
+}
+
+/* Buttons */
+
+.btn-move {
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 60px;
+  padding: 30px;
+  margin: 20px 5px 50px 5px;
+  cursor: pointer;
+}
+
+.move-icon {
+  width: 50px;
+}
+
+.btn-move:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.btn-move:hover .move-icon {
+  scale: 1.2;
+}
+
+.btn-reset {
+  font-size: 20px;
+  padding: 8px 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-reset:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+
+/* Drop down result */
+
+.game-result {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.game-moves {
+  margin-bottom: 50px;
+}
