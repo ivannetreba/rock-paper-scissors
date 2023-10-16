@@ -21,7 +21,7 @@ const btnAutoPlay = document.getElementById("auto-play");
 btnRock.addEventListener('click', () => {playRPS(`Rock`);});
 btnPaper.addEventListener('click', () => {playRPS(`Paper`);});
 btnScissors.addEventListener('click', () => {playRPS(`Scissors`);});
-btnReset.addEventListener('click', () => {resetScore();});
+btnReset.addEventListener('click', () => {resetScoreConfirt();});
 btnAutoPlay.addEventListener('click', () => {autoPlay();});
 
 
@@ -58,6 +58,13 @@ function autoPlay() {
   }
 }
 
+function resetScoreConfirt() {
+  const userResponse = confirm("Do you want to reset score?");
+
+  if (userResponse) {
+    resetScore();
+  } 
+}
 
 function resetScore() {
   score.wins = 0;
