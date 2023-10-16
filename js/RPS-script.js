@@ -10,6 +10,17 @@ updateScore()
 let isAutoPlay = false;
 let intervalID;
 
+
+const btnRock = document.getElementById("btn-rock");
+const btnPaper = document.getElementById("btn-paper");
+const btnScissors = document.getElementById("btn-scissors");
+
+
+btnRock.addEventListener('click', () => {playRPS(`Rock`);})
+btnPaper.addEventListener('click', () => {playRPS(`Paper`);})
+btnScissors.addEventListener('click', () => {playRPS(`Scissors`);})
+
+
 function autoPlay() {
   if (!isAutoPlay) {
     intervalID = setInterval(() => {
