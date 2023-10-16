@@ -14,11 +14,15 @@ let intervalID;
 const btnRock = document.getElementById("btn-rock");
 const btnPaper = document.getElementById("btn-paper");
 const btnScissors = document.getElementById("btn-scissors");
+const btnReset = document.getElementById("btn-reset");
+const btnAutoPlay = document.getElementById("auto-play");
 
 
-btnRock.addEventListener('click', () => {playRPS(`Rock`);})
-btnPaper.addEventListener('click', () => {playRPS(`Paper`);})
-btnScissors.addEventListener('click', () => {playRPS(`Scissors`);})
+btnRock.addEventListener('click', () => {playRPS(`Rock`);});
+btnPaper.addEventListener('click', () => {playRPS(`Paper`);});
+btnScissors.addEventListener('click', () => {playRPS(`Scissors`);});
+btnReset.addEventListener('click', () => {playRPS(`Reset`);});
+btnAutoPlay.addEventListener('click', () => {autoPlay();});
 
 
 document.body.addEventListener('keydown', (event) => {
@@ -28,6 +32,8 @@ document.body.addEventListener('keydown', (event) => {
     playRPS(`Paper`);
   } else if (event.key === 's') {
     playRPS(`Scissors`);
+  } else if (event.key === ' ') {
+    playRPS(`Reset`);
   }
 })
 
