@@ -12,7 +12,7 @@ let intervalID;
 
 function autoPlay() {
   if (!isAutoPlay) {
-    intervalID = setInterval(function() {
+    intervalID = setInterval(() => {
     const playerMove = сompChoose();
     playRPS(playerMove);
     }, 1000)
