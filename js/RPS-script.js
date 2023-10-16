@@ -21,6 +21,17 @@ btnPaper.addEventListener('click', () => {playRPS(`Paper`);})
 btnScissors.addEventListener('click', () => {playRPS(`Scissors`);})
 
 
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playRPS(`Rock`);
+  } else if (event.key === 'p') {
+    playRPS(`Paper`);
+  } else if (event.key === 's') {
+    playRPS(`Scissors`);
+  }
+})
+
+
 function autoPlay() {
   if (!isAutoPlay) {
     intervalID = setInterval(() => {
