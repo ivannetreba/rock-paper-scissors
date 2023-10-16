@@ -21,7 +21,7 @@ const btnAutoPlay = document.getElementById("auto-play");
 btnRock.addEventListener('click', () => {playRPS(`Rock`);});
 btnPaper.addEventListener('click', () => {playRPS(`Paper`);});
 btnScissors.addEventListener('click', () => {playRPS(`Scissors`);});
-btnReset.addEventListener('click', () => {playRPS(`Reset`);});
+btnReset.addEventListener('click', () => {resetScore();});
 btnAutoPlay.addEventListener('click', () => {autoPlay();});
 
 
@@ -34,6 +34,8 @@ document.body.addEventListener('keydown', (event) => {
     playRPS(`Scissors`);
   } else if (event.key === ' ') {
     playRPS(`Reset`);
+  } else if (event.key === 'a') {
+    autoPlay();
   }
 })
 
@@ -55,6 +57,20 @@ function autoPlay() {
     document.getElementById("auto-play").innerHTML = `Auto Play`;
   }
 }
+
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  document.getElementById('gameResult').innerHTML = '';
+  document.getElementById('gameMoves').innerHTML = '';
+  
+  updateScore()
+
+  localStorage.setItem('score', JSON.stringify(score));
+}
+
 
 function playRPS(playerMove) {
   const compMove = сompChoose();
@@ -96,18 +112,10 @@ function playRPS(playerMove) {
     score.ties += 1;
   }
 
-  if (playerMove === `Reset`) {
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    document.getElementById('gameResult').innerHTML = '';
-    document.getElementById('gameMoves').innerHTML = '';
-  } else {
-    document.getElementById('gameResult').innerHTML = `${result}`;
+  document.getElementById('gameResult').innerHTML = `${result}`;
 
-    document.getElementById('gameMoves').innerHTML = 
-    `You <img src="images/${playerMove}-emoji.png" class="move-icon"> <img src="images/${compMove}-emoji.png" class="move-icon"> Computer`;
-  }
+  document.getElementById('gameMoves').innerHTML = 
+  `You <img src="images/${playerMove}-emoji.png" class="move-icon"> <img src="images/${compMove}-emoji.png" class="move-icon"> Computer`;
   
   updateScore()
 
